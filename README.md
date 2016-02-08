@@ -10,7 +10,8 @@ if you visit `/quote` a random quote is served to you.
 
 ###TODO
 
-Do server side rending
-Make it look pretty
-Set it up as a fornt end app
-Enable CRUD API with mongodb
+- Do server side rending
+- Make it look pretty
+- Set it up as a fornt end app
+- Enable CRUD API with mongodb
+- maybe cli?
