@@ -1,0 +1,23 @@
+{
+  "name": "inspire-me",
+  "version": "1.0.0",
+  "description": "A quote generating app meant to inspire me and as an assignment for test driven development",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test -R spec --ui bdd"
+  },
+  "keywords": [
+    "quotes",
+    "inspiration",
+    "fun"
+  ],
+  "author": "Amr Draz <amr.m.draz@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "mongodb": "^2.1.6"
+  }
+}
