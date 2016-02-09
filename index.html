@@ -5,42 +5,46 @@
     <title>Inspire Me</title>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
     <style>
-        html,body {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        body {
-            text-align: center;
-            font-family: Lato, Arial, sans-serif;
-            font-size: 100%;
-            cursor: pointer;
-            background: hsl(400, 60%, 68%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .quote {
-            font-weight: 400;
-            color: #fff;
-            text-shadow: 1px 1px 0px rgba(0,0,0,0.2);
-            font-size: 5ex;
-            padding: 0;
-            margin: 0;
-            line-height: 1.5;
-            max-width: 90%;
-        }
-        .author {
-            position: absolute;
-            bottom: 0px;
-            right: 20px;
-            font-weight: 300;
-            font-size: 5ex;
-            color: #fff;
-            text-shadow: 1px 1px 0px rgba(0,0,0,0.1);
-            max-width: 60%;
-            align-self: flex-end;
-        }
+    html,
+    body {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    body {
+        text-align: center;
+        font-family: Lato, Arial, sans-serif;
+        font-size: 100%;
+        cursor: pointer;
+        background: hsl(400, 60%, 68%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .quote {
+        font-weight: 400;
+        color: #fff;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+        font-size: 5ex;
+        padding: 0;
+        margin: 0;
+        line-height: 1.5;
+        max-width: 90%;
+    }
+    
+    .author {
+        position: absolute;
+        bottom: 0px;
+        right: 20px;
+        font-weight: 300;
+        font-size: 5ex;
+        color: #fff;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+        max-width: 60%;
+        align-self: flex-end;
+    }
     </style>
 </head>
 
@@ -52,12 +56,18 @@
     <script>
     var $quote = document.querySelector('.quote');
     var $author = document.querySelector('.author');
-    document.body.addEventListener('click', function() {
-        fetch('/quote').then(function(res) {
-            return res.json();
-        }).then(function(quote) {
-            document.body.style.backgroundColor = 'hsl('+(Math.random()*360)+', 55%, 85%)'
-            $quote.innerHTML =  quote.text;
+
+    function getElementByIndexElseRandom(array, index) {
+        index = index === undefined ? Math.floor(Math.random() * array.length) : index;
+        return array[index];
+    }
+    fetch('/quotes.json').then(function(res) {
+        return res.json();
+    }).then(function(quotes) {
+        document.body.addEventListener('click', function() {
+            var quote = getElementByIndexElseRandom(quotes);
+            document.body.style.backgroundColor = 'hsl(' + (Math.random() * 360) + ', 55%, 80%)'
+            $quote.innerHTML = quote.text;
             $author.innerHTML = quote.author;
         });
     });
