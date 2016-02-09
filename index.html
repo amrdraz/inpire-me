@@ -61,7 +61,7 @@
         index = index === undefined ? Math.floor(Math.random() * array.length) : index;
         return array[index];
     }
-    fetch('/quotes.json').then(function(res) {
+    fetch('./quotes.json').then(function(res) {
         return res.json();
     }).then(function(quotes) {
         document.body.addEventListener('click', function() {
