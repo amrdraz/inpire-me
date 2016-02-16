@@ -4,6 +4,7 @@
   "description": "A quote generating app meant to inspire me and as an assignment for test driven development",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "mocha test -R spec --ui bdd",
     "coverage": "istanbul cover _mocha -- -R spec"
   },
@@ -17,7 +18,8 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "istanbul": "^0.4.2",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "supertest": "^1.2.0"
   },
   "dependencies": {
     "express": "^4.13.4",
