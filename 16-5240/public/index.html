@@ -53,10 +53,10 @@
     var $quote = document.querySelector('.quote');
     var $author = document.querySelector('.author');
     document.body.addEventListener('click', function() {
-        fetch('/quote').then(function(res) {
+        fetch('/api/quote').then(function(res) {
             return res.json();
         }).then(function(quote) {
-            document.body.style.backgroundColor = 'hsl('+(Math.random()*360)+', 55%, 85%)'
+            document.body.style.backgroundColor = 'hsl('+(Math.random()*360)+', 55%, 75%)'
             $quote.innerHTML =  quote.text;
             $author.innerHTML = quote.author;
         });

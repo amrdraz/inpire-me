@@ -2,7 +2,7 @@
   "name": "inspire-me",
   "version": "1.0.0",
   "description": "A quote generating app meant to inspire me and as an assignment for test driven development",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "mocha test -R spec --ui bdd",
     "coverage": "istanbul cover _mocha -- -R spec"
@@ -20,6 +20,7 @@
     "mocha": "^2.4.5"
   },
   "dependencies": {
+    "express": "^4.13.4",
     "mongodb": "^2.1.6"
   }
 }
